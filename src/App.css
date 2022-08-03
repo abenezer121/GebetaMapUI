@@ -1,0 +1,11 @@
+* {
+  box-sizing: border-box;
+  font-family: calibri;
+}
+.App {
+  text-align: center;
+}
+
+.test {
+  border: 1px solid red;
+}
