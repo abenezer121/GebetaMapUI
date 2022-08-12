@@ -14,25 +14,25 @@ import PriceBox from "../features/Container/PriceBox";
 function Intro() {
   return (
     <div className="flex sw">
-      <div className="my-32 flex flex-col gap-2 grow w-1/2">
-      <h1 className="uppercase whitespace-nowrap">
+      <div className="my-32 flex flex-col gap-2 grow w-1/2 ">
+      <h1 className="uppercase sm:whitespace-nowrap ">
         <span className="text-white">Gebeta</span>
         Maps
         <br />
         Routing & Direction API
       </h1>
-      <p className="text-white">
+      <p className="text-white md:textShadow-[transparent] textShadow-[#000]">
       Reliable, fast and effcient routing system, and also this is where we write important 
       </p>
-      <div className="flex gap-4">
+      <div className="flex whitespace-nowrap gap-4">
         <Link to="/" className='btn p-2 px-4 theme-light'>Get Started</Link>
         <Link to="/" className='btn p-2 px-4'>Contact Us</Link>
       </div>
     </div>
     <div className=" grow flex flex-col w-1/2 ">
       <div className="relative w-full h-full -z-10">
-        <Poly1 className="absolute left-2 top-0 w-[600px] h-[450px] scale-100" />
-        <Poly2 className="absolute left-0 top-0 w-[600px] h-[450px] scale-125" />
+        <Poly1 className="absolute left-2 -translate-x-32 md:translate-x-0 top-0 w-[600px] h-[450px] scale-100" />
+        <Poly2 className="absolute left-0 -translate-x-32 md:translate-x-0 top-0 w-[600px] h-[450px] scale-125" />
       </div>
     </div>
   </div>
@@ -40,8 +40,9 @@ function Intro() {
 }
 function Services() {
   return (
-    <div className="sw flex justify-center gap-4 overflow-auto snap-x">
-      <ServiceBox title='one-to-one' color='orange' icon={<LocationOn />} className="snap-start">
+    <div className='flex justify-center max-w-full'>
+    <div className="sw flex gap-2 md:overflow-x-visible overflow-x-scroll snap-x snap-mandatory">
+      <ServiceBox title='one-to-one' color='orange' icon={<LocationOn className='w-full h-full' />}>
         <p className="py-4 text-gray-600">
           Reliable, fast and effcient routing 
             and also this is where we
@@ -53,7 +54,7 @@ function Services() {
           <Link to="/" className="text-blue-800 font-bold">Read More</Link>
         </div>
       </ServiceBox>
-      <ServiceBox title='one-to-one' color='rgb(29,76,216)' icon={<MyLocation />} className="snap-start">
+      <ServiceBox title='one-to-one' color='rgb(29,76,216)' icon={<MyLocation className='w-full h-full' />}>
         <p className="py-4 text-gray-600">
           Reliable, fast and effcient routing 
             and also this is where we
@@ -65,7 +66,7 @@ function Services() {
           <Link to="/" className="text-blue-800 font-bold">Read More</Link>
         </div>
       </ServiceBox>
-      <ServiceBox title='one-to-one' color='rgb(22,162,74)' icon={<MapMarker />} className="snap-start">
+      <ServiceBox title='one-to-one' color='rgb(22,162,74)' icon={<MapMarker className='w-full h-full' />}>
         <p className="py-4 text-gray-600 ">
           Reliable, fast and effcient routing 
             and also this is where we
@@ -78,18 +79,19 @@ function Services() {
         </div>
       </ServiceBox>
     </div>
+    </div>
   )
 }
 function StepLine(props) {
   const {children} = props;
   return (
     <div className="flex justify-evenly mt-10" {...props}>
-      <div className="flex-1">
-        <Polygon className="w-full -rotate-12" color='#fcc652'/>
+      <div className="flex-1 self-start relative">
+        <Polygon className="sm:min-w-full min-w-[200px] -rotate-12 absolute sm:relative" color='#fcc652'/>
       </div>
-      <div className="flex-1 self-stretch text-center flex justify-center items-center p-6">
+      <p className="flex-1 self-stretch min-w-[250px] text-center flex justify-center items-center p-6 z-10">
           {children}
-      </div>
+      </p>
     </div>
   )
 }
@@ -103,6 +105,7 @@ function Steps() {
         and also this is where we write important
         Reliable, fast and effcient routing system,
       </StepLine>
+      <div className='md:h-4 h-14'>&nbsp;</div>
       <StepLine className='flex flex-row-reverse'>
         Reliable, fast and effcient routing 
         and also this is where we write important 
@@ -110,6 +113,7 @@ function Steps() {
         and also this is where we write important
         Reliable, fast and effcient routing system,
       </StepLine>
+      <div className='md:h-4 h-14'>&nbsp;</div>
     </div>
   )
 }
@@ -146,11 +150,13 @@ function PricePlans() {
     icon: <BestSellerIcon className="w-full h-full" />
   }
   return (
-    <div className="flex justify-center items-center">
-      <PriceBox obj={obj} />
-      <PriceBox obj={obj2} />
-      <PriceBox obj={obj3} />
-      <PriceBox obj={obj4} />
+    <div className="flex justify-center max-w-full">
+      <div className="flex items-start px-10 md:overflow-x-visible overflow-x-scroll snap-x snap-mandatory">
+        <PriceBox obj={obj}/>
+        <PriceBox obj={obj2}/>
+        <PriceBox obj={obj3}/>
+        <PriceBox obj={obj4}/>
+      </div>
     </div>
   )
 }
@@ -161,6 +167,7 @@ function Home() {
       <Services />
       <Steps />
       <PricePlans />
+      <div className="h-52">&nbsp;</div>
     </div>
   )
 }

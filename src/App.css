@@ -9,3 +9,41 @@
 .test {
   border: 1px solid red;
 }
+
+.menu-btn{
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  overflow: hidden;
+}
+.menu-btn span,
+.menu-btn:before,
+.menu-btn:after{
+	content: "";
+	position: absolute;
+	top: calc(50% - 1px);
+	width: 80%;
+	border-bottom: 2px solid #000;
+	transition: transform .6s cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+.menu-btn:before{
+  transform: translateY(-8px);
+}
+.menu-btn:after{
+  transform: translateY(8px);
+}
+.menu-btn.open span {
+  transform: translateX(-110%);
+  border: transparent;
+}
+.menu-btn.open:before {
+  transform: rotate(45deg);
+}
+.menu-btn.open:after {
+  transform: rotate(-45deg) ;
+}

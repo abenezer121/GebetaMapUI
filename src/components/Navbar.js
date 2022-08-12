@@ -3,7 +3,7 @@ import {Outlet} from 'react-router-dom';
 import Header from "./Header";
 // import {ReactComponent as BGPolygon} from '../assets/icons/bg-polygon.svg'
 
-function Layout() {
+function Navbar() {
   return (
     <div className="bg overflow-hidden">
       <div className='flex flex-col items-center bg-bg relative'>
@@ -17,4 +17,4 @@ function Layout() {
   )
 }
 
-export default Layout;
+export default Navbar;

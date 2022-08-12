@@ -2,7 +2,7 @@ import React from "react";
 
 
 function Polygon(props) {
-  const {color="orange"} = props;
+  const {color="#F3C651"} = props;
   return (
     <svg viewBox="0 0 241 241" fill="none" xmlns="http://www.w3.org/2000/svg" {...props}>
       <g filter="url(#filter0_f_224_34)">

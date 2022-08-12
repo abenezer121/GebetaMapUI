@@ -32,18 +32,26 @@ code {
 @layer base {
 
 
+  .active_btn {
+    @apply bg-opacity-40 bg-black/20 rounded-md p-4 py-1;
+  }
+
   button,
   .btn,
   input[type='button'],
   input[type='submit'] {
-    @apply bg-dark p-1 px-3 text-white uppercase;
+    @apply bg-dark p-1 px-3 text-white uppercase text-sm text-center;
   }  
 
   h1 {
-    @apply text-4xl font-black
+    @apply text-4xl font-black;
   }
   h2 {
     @apply text-2xl font-black;
+  }
+
+  p {
+    @apply text-gray-500 py-2;
   }
 
 
@@ -55,6 +63,10 @@ code {
     @apply bg-white text-dark;
   }
   
+  .text-shadow {
+    text-shadow: 1px 0 3px black;
+  }
+
   input,
   textarea {
     @apply border px-2 py-1 border-grey;
@@ -69,7 +81,7 @@ code {
 
 
 .card {
-  @apply bg-white text-dark p-3;
+  @apply bg-white text-dark p-3 shadow-md;
 }
 
 

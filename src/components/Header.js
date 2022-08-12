@@ -18,7 +18,7 @@ function Header() {
             </h2>
           </Link>
         </div>
-        <div className="flex text-white grow justify-end items-center gap-4 flex-wrap">
+        <div className="hidden md:flex text-white grow justify-end items-center gap-4 flex-wrap">
           <Link to="/">features</Link>
           <Link to="/">pricing</Link>
           <Link to="/">documenation</Link>
@@ -45,6 +45,7 @@ function Header() {
             </Modal>
           </div>
         </div>
+        <div className="md:hidden gap-4 grow flex items-cneter justify-end">Menu</div>
       </div>
   )
 }
