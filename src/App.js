@@ -5,6 +5,7 @@ import Navbar from './components/Navbar';
 import Home from './pages/Home';
 import Sidebar from './components/Admin/Sidebar';
 import Dashboard from './pages/admin/Dashboard';
+import Index from './pages/LandingPage/Index';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Route path="/admin" element={<Sidebar />}>
           <Route index element={<Dashboard />} />
         </Route>
+        <Route path='/LandingPage' element={<Index />} />
       </Routes>
     </Router>
   );
